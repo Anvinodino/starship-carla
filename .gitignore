@@ -1,0 +1,5 @@
+*.blend1
+__pycache__/
+*_log.txt
+starship_sensors_test.png
+scripts/unreal_editor/starship_values.json

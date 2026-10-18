@@ -1,0 +1,36 @@
+{
+  "_comment": "Sensor-Ausstattung HKA-Starship-Bot. Positionen in Metern relativ zum Fahrzeug-Ursprung (Boden, Mitte). CARLA-Achsen: x vorne, y rechts, z oben. Kameraanordnung nach Starship-Patent US20180253107A1 (9 Kameras: Einzelkamera vorne + Stereo-Paare vorne/links/rechts/hinten; Basis vorne/hinten 5-10 cm, seitlich 15-20 cm; vordere Paar-Kameras 20-40 Grad nach unten; Sichtfeld ca. 60x80 Grad, seitlich hochkant; 4 Bilder/s). ToF-, Radar- und Ultraschall-Positionen sind begruendete Annahmen.",
+  "vehicle": {"blueprint": "vehicle.starship.bot", "role_name": "starship"},
+  "sensors": [
+    {"id": "cam_front",       "type": "sensor.camera.rgb", "group": "camera_front", "x": 0.28, "y": 0.0,   "z": 0.42, "yaw": 0,   "pitch": 0,   "attributes": {"image_size_x": "640", "image_size_y": "480", "fov": "80", "sensor_tick": "0.25"}},
+    {"id": "cam_front_left",  "type": "sensor.camera.rgb", "group": "stereo_front", "x": 0.28, "y": -0.04, "z": 0.40, "yaw": 0,   "pitch": -30, "attributes": {"image_size_x": "640", "image_size_y": "480", "fov": "80", "sensor_tick": "0.25"}},
+    {"id": "cam_front_right", "type": "sensor.camera.rgb", "group": "stereo_front", "x": 0.28, "y": 0.04,  "z": 0.40, "yaw": 0,   "pitch": -30, "attributes": {"image_size_x": "640", "image_size_y": "480", "fov": "80", "sensor_tick": "0.25"}},
+    {"id": "cam_left_front",  "type": "sensor.camera.rgb", "group": "stereo_left",  "x": 0.09, "y": -0.23, "z": 0.40, "yaw": -90, "pitch": -10, "attributes": {"image_size_x": "480", "image_size_y": "640", "fov": "60", "sensor_tick": "0.25"}},
+    {"id": "cam_left_rear",   "type": "sensor.camera.rgb", "group": "stereo_left",  "x": -0.09,"y": -0.23, "z": 0.40, "yaw": -90, "pitch": -10, "attributes": {"image_size_x": "480", "image_size_y": "640", "fov": "60", "sensor_tick": "0.25"}},
+    {"id": "cam_right_rear",  "type": "sensor.camera.rgb", "group": "stereo_right", "x": -0.09,"y": 0.23,  "z": 0.40, "yaw": 90,  "pitch": -10, "attributes": {"image_size_x": "480", "image_size_y": "640", "fov": "60", "sensor_tick": "0.25"}},
+    {"id": "cam_right_front", "type": "sensor.camera.rgb", "group": "stereo_right", "x": 0.09, "y": 0.23,  "z": 0.40, "yaw": 90,  "pitch": -10, "attributes": {"image_size_x": "480", "image_size_y": "640", "fov": "60", "sensor_tick": "0.25"}},
+    {"id": "cam_rear_left",   "type": "sensor.camera.rgb", "group": "stereo_rear",  "x": -0.28,"y": 0.04,  "z": 0.40, "yaw": 180, "pitch": -10, "attributes": {"image_size_x": "640", "image_size_y": "480", "fov": "80", "sensor_tick": "0.25"}},
+    {"id": "cam_rear_right",  "type": "sensor.camera.rgb", "group": "stereo_rear",  "x": -0.28,"y": -0.04, "z": 0.40, "yaw": 180, "pitch": -10, "attributes": {"image_size_x": "640", "image_size_y": "480", "fov": "80", "sensor_tick": "0.25"}},
+
+    {"id": "tof_front", "type": "sensor.camera.depth", "group": "tof", "x": 0.28, "y": 0.0,   "z": 0.30, "yaw": 0,   "pitch": -15, "max_range": 5.0, "attributes": {"image_size_x": "320", "image_size_y": "240", "fov": "90"}},
+    {"id": "tof_left",  "type": "sensor.camera.depth", "group": "tof", "x": 0.0,  "y": -0.23, "z": 0.30, "yaw": -90, "pitch": -15, "max_range": 5.0, "attributes": {"image_size_x": "320", "image_size_y": "240", "fov": "90"}},
+    {"id": "tof_right", "type": "sensor.camera.depth", "group": "tof", "x": 0.0,  "y": 0.23,  "z": 0.30, "yaw": 90,  "pitch": -15, "max_range": 5.0, "attributes": {"image_size_x": "320", "image_size_y": "240", "fov": "90"}},
+
+    {"id": "radar_front", "type": "sensor.other.radar", "group": "radar", "x": 0.28,  "y": 0.0,   "z": 0.35, "yaw": 0,   "pitch": 0, "attributes": {"horizontal_fov": "60", "vertical_fov": "20", "range": "20", "points_per_second": "1500"}},
+    {"id": "radar_rear",  "type": "sensor.other.radar", "group": "radar", "x": -0.28, "y": 0.0,   "z": 0.35, "yaw": 180, "pitch": 0, "attributes": {"horizontal_fov": "60", "vertical_fov": "20", "range": "20", "points_per_second": "1500"}},
+    {"id": "radar_left",  "type": "sensor.other.radar", "group": "radar", "x": 0.0,   "y": -0.23, "z": 0.35, "yaw": -90, "pitch": 0, "attributes": {"horizontal_fov": "60", "vertical_fov": "20", "range": "20", "points_per_second": "1500"}},
+    {"id": "radar_right", "type": "sensor.other.radar", "group": "radar", "x": 0.0,   "y": 0.23,  "z": 0.35, "yaw": 90,  "pitch": 0, "attributes": {"horizontal_fov": "60", "vertical_fov": "20", "range": "20", "points_per_second": "1500"}},
+
+    {"id": "us_front_left",  "type": "sensor.other.obstacle", "group": "ultrasonic", "x": 0.28,  "y": -0.15, "z": 0.22, "yaw": -30,  "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_front",       "type": "sensor.other.obstacle", "group": "ultrasonic", "x": 0.28,  "y": 0.0,   "z": 0.22, "yaw": 0,    "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_front_right", "type": "sensor.other.obstacle", "group": "ultrasonic", "x": 0.28,  "y": 0.15,  "z": 0.22, "yaw": 30,   "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_right",       "type": "sensor.other.obstacle", "group": "ultrasonic", "x": 0.0,   "y": 0.23,  "z": 0.22, "yaw": 90,   "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_rear_right",  "type": "sensor.other.obstacle", "group": "ultrasonic", "x": -0.28, "y": 0.15,  "z": 0.22, "yaw": 150,  "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_rear",        "type": "sensor.other.obstacle", "group": "ultrasonic", "x": -0.28, "y": 0.0,   "z": 0.22, "yaw": 180,  "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_rear_left",   "type": "sensor.other.obstacle", "group": "ultrasonic", "x": -0.28, "y": -0.15, "z": 0.22, "yaw": -150, "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+    {"id": "us_left",        "type": "sensor.other.obstacle", "group": "ultrasonic", "x": 0.0,   "y": -0.23, "z": 0.22, "yaw": -90,  "pitch": 4, "attributes": {"distance": "3.0", "hit_radius": "0.15", "only_dynamics": "false"}},
+
+    {"id": "gnss", "type": "sensor.other.gnss", "group": "gnss", "x": 0.0, "y": 0.0, "z": 0.52, "yaw": 0, "pitch": 0, "attributes": {"noise_lat_stddev": "0.00002", "noise_lon_stddev": "0.00002", "noise_alt_stddev": "1.0", "noise_seed": "1"}},
+    {"id": "imu",  "type": "sensor.other.imu",  "group": "imu",  "x": 0.0, "y": 0.0, "z": 0.25, "yaw": 0, "pitch": 0, "attributes": {"noise_accel_stddev_x": "0.02", "noise_accel_stddev_y": "0.02", "noise_accel_stddev_z": "0.02", "noise_gyro_stddev_x": "0.002", "noise_gyro_stddev_y": "0.002", "noise_gyro_stddev_z": "0.002"}}
+  ]
+}
