@@ -20,6 +20,7 @@ und **Unreal Engine 4.26.2 (CARLA-Fork)**. Für CARLA 0.10 (Unreal 5, Chaos) sie
 | `scripts/carla/` | Python-Clients: Sensoren spawnen und anzeigen, Fahren, Geschwindigkeitstest. |
 | `scripts/unreal_editor/` | Editor-Python: FBX-Import, Werte auslesen. |
 | `docs/` | [Fahrzeugwerte](docs/FAHRZEUGWERTE.md), [Sensorik mit Begründung](docs/SENSORIK.md), [Umstieg auf CARLA 0.10](docs/CARLA_0.10.md), Bilder. |
+| `ki_kontext/` | [Projektzusammenfassung für KI-Assistenten](ki_kontext/00_LIES_MICH_ZUERST.md): Stand, Umgebung, gelöste Probleme, offene Punkte. |
 
 ## Schnellstart (CARLA UE4, gleicher Stand)
 
