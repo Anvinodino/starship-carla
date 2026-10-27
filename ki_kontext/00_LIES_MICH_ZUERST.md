@@ -1,6 +1,6 @@
 # Kontext: Starship-Lieferroboter als CARLA-Fahrzeug
 
-Stand: 28.10.2026. Dieser Ordner fasst eine lange Arbeitssitzung (07.10.–18.10.2026) mit Claude zusammen,
+Stand: 28.10.2026. Dieser Ordner fasst zwei Arbeitssitzungen (07.10.–28.10.2026) mit Claude zusammen,
 damit eine andere KI ohne Vorwissen weitermachen kann. Zuerst diese Datei lesen. Details: `../docs/` und `../config/` in diesem Repo.
 
 ## Worum es geht
@@ -93,3 +93,7 @@ Für CARLA 0.10 empfiehlt die Doku 32 GB RAM und 16 GB VRAM; dieser PC liegt dar
 | `docs/CARLA_0.10.md` | was sich beim Umstieg auf Chaos ändert |
 | `config/starship_values.json`, `config/starship_sensors.json` | dieselben Werte maschinenlesbar |
 | `docs/images/` | Bilder: Bot in CARLA, Sensorpositionen, Content Browser, Blueprint |
+| `ki_kontext/verlauf/chat1_skelett-knochen_und_paket/` | Chat 1 als Markdown mit Screenshots: Knochennamen, erster Import, Ursache des Durchfallens (Skalierung 100), v2-FBX; später Versionen, CARLA 0.10, Werte-Doku, GitHub-Paket |
+| `ki_kontext/verlauf/chat2_loesung_durchfallen_sensoren_hka/` | Chat 2 als Markdown mit Screenshots: **die eigentliche Lösung** gegen das Durchfallen (v3/v4-FBX, Knochen-Rotation, VehicleBounds, Schwerpunkt, Tire Config), Sensoren, HKA-Design |
+
+Die Chatverläufe sind bereinigt: Systemhinweise, interne Metadaten, Denkschritte und die E-Mail-Adresse sind entfernt, Werkzeugaufrufe und -ergebnisse gekürzt. Screenshots liegen jeweils in `bilder/` und sind im Text an der passenden Stelle eingebunden.
